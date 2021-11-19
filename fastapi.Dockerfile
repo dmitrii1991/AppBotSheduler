@@ -1,8 +1,5 @@
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.8
 
-RUN useradd appuser && chown -R appuser /app
-USER appuser
-
 COPY ./app/app /app/app
 COPY ./app/logs /app/logs
 COPY ./app/routers /app/routers

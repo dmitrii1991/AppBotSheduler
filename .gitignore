@@ -1,0 +1,16 @@
+venv
+.idea
+__pycache__
+migrations
+examples
+
+.pytest_cache
+
+*.crt
+*.key
+*.log
+test_docker-compose.yml
+
+# Секретки
+app/settings.py
+*.env

@@ -21,4 +21,7 @@ RUN aerich init-db
 RUN aerich migrate
 RUN aerich upgrade
 
+RUN useradd appuser && chown -R appuser /app
+USER appuser
+
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "6", "--proxy-headers"]

@@ -6,8 +6,8 @@ ROOT_PATH = abspath(dirname(__file__))
 MEDIA_PATH = join(ROOT_PATH, 'media')
 LOGS_DIR = join(ROOT_PATH, 'logs')
 
-TOKEN: str = getenv("TOKEN")
-ADMIN_TOKEN: bytes = getenv("ADMIN_TOKEN").encode()
+TOKEN: str = getenv("TOKEN", "1111")
+ADMIN_TOKEN: bytes = getenv("ADMIN_TOKEN", "1111").encode()
 WEBHOOK_PATH: str = f"/bot/{TOKEN}"
 WEBHOOK_URL: str = "https://7608e5642d7f.ngrok.io" + WEBHOOK_PATH
 ACCESS_TOKEN_EXPIRE_MINUTES = 39999999

@@ -5,6 +5,7 @@ COPY ./app/logs /app/logs
 COPY ./app/app_bot /app/app_bot
 COPY ./app/main_bot.py /app/main_bot.py
 COPY ./app/settings.py /app/settings.py
+COPY ./app/media /app/media
 COPY ./requirements.txt /requirements.txt
 
 RUN pip install -r  /requirements.txt

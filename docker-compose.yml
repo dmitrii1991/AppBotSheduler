@@ -94,7 +94,8 @@ services:
       context: .
       dockerfile: fastapi.Dockerfile
     container_name: api_bot
-    command: bash -c "aerich init -t settings.TORTOISE_ORM &&  aerich init-db && aerich migrate &&  aerich upgrade  && gunicorn main:app --host 0.0.0.0 --port 8000 --workers 6"
+    command: bash -c "aerich init -t settings.TORTOISE_ORM &&  aerich init-db && gunicorn main:app --host 0.0.0.0 --port 8000 --workers 6"
+#    && aerich migrate &&  aerich upgrade
     environment:
       - .env
     depends_on:
@@ -121,7 +122,6 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./nginx/log:/var/log/nginx/
       - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf
     logging:
       options:
@@ -140,8 +140,6 @@ services:
       - .env
     depends_on:
       - api_bot
-    ports:
-    - 9666:8000
     volumes:
       - data_bot:/app/logs/
     logging:

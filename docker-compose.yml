@@ -103,7 +103,7 @@ services:
     ports:
     - 9666:8000
     volumes:
-      - data_api:/app/logs/
+      - data_api:/app/logs
     logging:
       options:
         max-size: "20m"

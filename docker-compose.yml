@@ -125,6 +125,7 @@ services:
       - ./app/nginx/conf/nginx.conf:/etc/nginx/nginx.conf
       - ./app/nginx/cert/pycry.key:/etc/ssl/pycry.key
       - ./app/nginx/cert/pycry.crt:/etc/ssl/pycry.crt
+      - ./app/nginx/cert/ca.crt:/etc/ssl/ca.crt
 
     logging:
       options:

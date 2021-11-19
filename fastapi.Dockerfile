@@ -13,10 +13,6 @@ COPY ./app/nginx/cert/pycry.crt /etc/ssl/pycry.crt
 
 RUN pip install -r  /requirements.txt
 WORKDIR /app
-RUN aerich init -t settings.TORTOISE_ORM
-RUN aerich init-db
-RUN aerich migrate
-RUN aerich upgrade
 
 RUN useradd appuser && chown -R appuser /app
 USER appuser
